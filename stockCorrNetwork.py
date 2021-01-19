@@ -41,10 +41,10 @@ for symbol in symbols:
     print('Fetching quote history for %r' % symbol, file=sys.stderr)
     #url = ('https://raw.githubusercontent.com/scikit-learn/examples-data/'
     #       'master/financial-data/{}.csv')
-    #url = ('https://raw.githubusercontent.com/mailtsjp/Quandlproj1/example_data/'
-    #        'financial-data/{}.csv')
-    url = ('https://github.com/mailtsjp/Quandlproj1/example_data/financial-data/{}.csv')
-    quotes.append(pd.read_csv(url.format(symbol)))
+    url = ('https://raw.githubusercontent.com/mailtsjp/Quandlproj1/example_data/'
+            'financial-data/{}.csv')
+    #url = ('https://github.com/mailtsjp/Quandlproj1/example_data/financial-data/{}.csv')
+    #quotes.append(pd.read_csv(url.format(symbol)))
 
 close_prices = np.vstack([q['close'] for q in quotes])
 open_prices = np.vstack([q['open'] for q in quotes])
