@@ -42,7 +42,7 @@ for symbol in symbols:
     #url = ('https://raw.githubusercontent.com/scikit-learn/examples-data/'
     #       'master/financial-data/{}.csv')
     url = ('https://raw.githubusercontent.com/mailtsjp/Quandlproj1/example_data/'
-            'financial-data/{}.csv')
+            'master/financial-data/{}.csv')
     #url = ('https://github.com/mailtsjp/Quandlproj1/example_data/financial-data/{}.csv')
     #quotes.append(pd.read_csv(url.format(symbol)))
 
