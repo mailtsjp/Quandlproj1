@@ -23,72 +23,7 @@ print(__doc__)
 # alphavantage.co ones.
 
 symbol_dict = {
-     'V': 'Visa',
-     'msft': 'Msft',
-     'NVDA': 'Nvdia'
-}
-"""
-    'VIXY': 'ConocoPhillips',
-    'VIG': 'Valero Energy',
-    'VEA': 'Microsoft',
-    'VBK': 'IBM',
-    'USRT': '',
-    'SPIB': 'SPIB',
-    'MGV': 'MGV',
-    'IVOG': 'IVOG',
-    'ILTB': 'ILTB',
-    'GLD': 'GLD',
-    'BND': 'BND',
-    'EEM': 'EEM',
-    'IVV': 'IVV',
-    'SPY': 'SPY',
-    'QQQ': 'QQQ',
-    'VTV': 'VTV',
-    'IJH': 'IJH',
-    'IJR': 'IJR',
-
-
-    'TOT': 'Total',
-    'XOM': 'Exxon',
-    'CVX': 'Chevron',
-    'COP': 'ConocoPhillips',
-    'VLO': 'Valero Energy',
-    'MSFT': 'Microsoft',
-    'IBM': 'IBM',
-    'TWX': 'Time Warner',
-    'CMCSA': 'Comcast',
-    'CVC': 'Cablevision',
-    'YHOO': 'Yahoo',
-    'DELL': 'Dell',
-    'HPQ': 'HP',
-    'AMZN': 'Amazon',
-    'TM': 'Toyota',
-    'CAJ': 'Canon',
-    'SNE': 'Sony',
-    'F': 'Ford',
-    'HMC': 'Honda',
-    'NAV': 'Navistar',
-    'NOC': 'Northrop Grumman',
-    'BA': 'Boeing',
-    'KO': 'Coca Cola',
-    'MMM': '3M',
-    'MCD': 'McDonald\'s',
-    'PEP': 'Pepsi',
-    'K': 'Kellogg',
-    'UN': 'Unilever',
-    'MAR': 'Marriott',
-    'PG': 'Procter Gamble',
-    'CL': 'Colgate-Palmolive',
-    'GE': 'General Electrics',
-    'WFC': 'Wells Fargo',
-    'JPM': 'JPMorgan Chase',
-    'AIG': 'AIG',
-    'AXP': 'American express',
-    'BAC': 'Bank of America',
-    'GS': 'Goldman Sachs',
-    'AAPL': 'Apple',
-    'SAP': 'SAP',
-    'CSCO': 'Cisco',
+     
     'TXN': 'Texas Instruments',
     'XRX': 'Xerox',
     'WMT': 'Wal-Mart',
@@ -96,16 +31,7 @@ symbol_dict = {
     'GSK': 'GlaxoSmithKline',
     'PFE': 'Pfizer',
     'SNY': 'Sanofi-Aventis',
-    'NVS': 'Novartis',
-    'KMB': 'Kimberly-Clark',
-    'R': 'Ryder',
-    'GD': 'General Dynamics',
-    'RTN': 'Raytheon',
-    'CVS': 'CVS',
-    'CAT': 'Caterpillar',
-    'DD': 'DuPont de Nemours'
     }
-"""
 
 symbols, names = np.array(sorted(symbol_dict.items())).T
 
@@ -113,9 +39,8 @@ quotes = []
 
 for symbol in symbols:
     print('Fetching quote history for %r' % symbol, file=sys.stderr)
-    #url = ('https://raw.githubusercontent.com/scikit-learn/examples-data/'
-    #       'master/financial-data/{}.csv')
-    url = ('https://github.com/mailtsjp/Quandlproj1')       
+    url = ('https://raw.githubusercontent.com/scikit-learn/examples-data/'
+           'master/financial-data/{}.csv')
     quotes.append(pd.read_csv(url.format(symbol)))
 
 close_prices = np.vstack([q['close'] for q in quotes])
