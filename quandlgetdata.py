@@ -31,7 +31,7 @@ for stock in tickers:
     data.to_csv(csvfilename)
     data.head()
 
-
+#-----------------------------------
 #Extrace holdings from etf into file
 ETFtickers = loadtxt("etflist.csv", dtype=str, comments="#", delimiter=",", unpack=False)
 
@@ -43,6 +43,8 @@ ETFtickers = loadtxt("etflist.csv", dtype=str, comments="#", delimiter=",", unpa
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0"
 }
+
+#get holdings for etf
 
 def main(url):
     with requests.Session() as req:
